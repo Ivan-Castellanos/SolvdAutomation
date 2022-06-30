@@ -28,17 +28,17 @@ public class AmazonNavigationBar extends AbstractUIObject {
         super(driver, searchContext);
     }
 
-    public AmazonCartPage clickCartButton(){
+    public AmazonCartPage clickCartButton() {
         cartButton.click();
         return new AmazonCartPage(driver);
     }
 
-    public AmazonTodayDealsPage clickTodayDealsButton(){
+    public AmazonTodayDealsPage clickTodayDealsButton() {
         todaysDealsButton.click();
         return new AmazonTodayDealsPage(driver);
     }
 
-    public AmazonCustomerServicePage AmazonCustomerServicePage(){
+    public AmazonCustomerServicePage AmazonCustomerServicePage() {
         customerServiceButton.click();
         return new AmazonCustomerServicePage(driver);
     }

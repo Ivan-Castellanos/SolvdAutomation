@@ -4,7 +4,7 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class AmazonInterestBasedPage extends AmazonGeneralPage{
+public class AmazonInterestBasedPage extends AmazonAbstractPage {
     @FindBy(xpath = "//*[text() = 'Interest-Based Ads']")
     private ExtendedWebElement interestBasedTitle;
 

@@ -3,7 +3,6 @@ package com.qaprosoft.carina.demo.gui.amazon.components;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonConditionOfUsePage;
-import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonGeneralPage;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonInterestBasedPage;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonPrivacyPage;
 import org.openqa.selenium.SearchContext;
@@ -18,8 +17,6 @@ public class AmazonFooter extends AbstractUIObject {
     @FindBy(className = "nav-last")
     private ExtendedWebElement interestBasedLink;
 
-
-
     public AmazonFooter(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
@@ -29,12 +26,12 @@ public class AmazonFooter extends AbstractUIObject {
         return new AmazonConditionOfUsePage(driver);
     }
 
-    public AmazonPrivacyPage clickPrivacyLink(){
+    public AmazonPrivacyPage clickPrivacyLink() {
         privacyLink.click();
         return new AmazonPrivacyPage(driver);
     }
 
-    public AmazonInterestBasedPage clickInterestLink(){
+    public AmazonInterestBasedPage clickInterestLink() {
         interestBasedLink.click();
         return new AmazonInterestBasedPage(driver);
     }

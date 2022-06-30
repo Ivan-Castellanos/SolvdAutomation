@@ -4,7 +4,7 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class AmazonCustomerServicePage  extends AmazonGeneralPage{
+public class AmazonCustomerServicePage extends AmazonAbstractPage {
     @FindBy(xpath = "//*[text() = 'Welcome to Amazon Customer Service']")
     private ExtendedWebElement amazonCustomerServicePageTitle;
 
@@ -12,7 +12,7 @@ public class AmazonCustomerServicePage  extends AmazonGeneralPage{
         super(driver);
     }
 
-    public boolean isCustomerServicePageTitlePresent(){
+    public boolean isCustomerServicePageTitlePresent() {
         return amazonCustomerServicePageTitle.isElementPresent();
     }
 }

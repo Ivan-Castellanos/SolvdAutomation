@@ -6,14 +6,14 @@ import com.qaprosoft.carina.demo.gui.amazon.components.AmazonNavigationBar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class AmazonGeneralPage extends AbstractPage {
+public class AmazonAbstractPage extends AbstractPage {
     @FindBy(id = "navbar-main")
-    private AmazonNavigationBar navBar;
+    protected AmazonNavigationBar navBar;
 
     @FindBy(id = "navfooter")
-    private AmazonFooter amnFooter;
+    protected AmazonFooter footer;
 
-    public AmazonGeneralPage(WebDriver driver) {
+    public AmazonAbstractPage(WebDriver driver) {
         super(driver);
     }
 }

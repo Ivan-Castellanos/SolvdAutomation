@@ -1,8 +1,8 @@
 [
   {
-    "userId":"skip",
-    "id":"type:Integer",
-    "title":"regex:[A-Z,a-z]",
-    "completed":true
+    "userId": "skip",
+    "id": "type:Integer",
+    "title": "regex:[A-Z,a-z]",
+    "completed": true
   }
 ]

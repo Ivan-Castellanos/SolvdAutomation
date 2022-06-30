@@ -5,7 +5,6 @@ import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.api.APIMethodPoller;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.demo.api.GetTodoMethods;
-import com.qaprosoft.carina.demo.api.PatchTodoMethods;
 import com.qaprosoft.carina.demo.api.PostTodoMethod;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
@@ -45,7 +44,7 @@ public class APITest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "Api test")
-    public void testGetTodo(){
+    public void testGetTodo() {
         GetTodoMethods getTodoMethods = new GetTodoMethods();
         getTodoMethods.callAPIExpectSuccess();
         getTodoMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());

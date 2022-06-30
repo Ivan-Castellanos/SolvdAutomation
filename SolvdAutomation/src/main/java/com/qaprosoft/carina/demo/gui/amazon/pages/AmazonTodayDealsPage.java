@@ -6,9 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AmazonTodayDealsPage extends AmazonGeneralPage{
-
-    @FindBy(css = ".a-image-container")
+public class AmazonTodayDealsPage extends AmazonAbstractPage {
+    @FindBy(css = "[data-testid = 'deal-card']")
     private List<AmazonProduct> products;
 
     public AmazonTodayDealsPage(WebDriver driver) {
@@ -19,5 +18,7 @@ public class AmazonTodayDealsPage extends AmazonGeneralPage{
         return getTitle().equalsIgnoreCase("Amazon.com - Today's Deals");
     }
 
-
+    public int countProducts() {
+        return products.size();
+    }
 }

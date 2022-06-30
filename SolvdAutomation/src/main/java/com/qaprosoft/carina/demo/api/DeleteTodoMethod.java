@@ -9,12 +9,14 @@ import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
 
-@Endpoint(url = "${base_url}/todos",methodType = HttpMethodType.DELETE)
+@Endpoint(url = "${base_url}/todos", methodType = HttpMethodType.DELETE)
 @RequestTemplatePath(path = "api/todos/_delete/rq.json")
 @ResponseTemplatePath(path = "api/todos/_delete/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 
 public class DeleteTodoMethod extends AbstractApiMethodV2 {
 
-    public DeleteTodoMethod() {replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));}
+    public DeleteTodoMethod() {
+        replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));
+    }
 }

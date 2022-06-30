@@ -8,9 +8,11 @@ import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
 
-@Endpoint(url= "${base_url}/todos",methodType = HttpMethodType.GET)
+@Endpoint(url = "${base_url}/todos", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/todos/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetTodoMethods extends AbstractApiMethodV2 {
-    public GetTodoMethods() {replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));}
+    public GetTodoMethods() {
+        replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));
+    }
 }

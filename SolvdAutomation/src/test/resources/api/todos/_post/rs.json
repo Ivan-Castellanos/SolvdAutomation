@@ -1,9 +1,19 @@
 {
-   "0":{
-      "userId":1,
-      "id":"generate_number(1)",
-      <#if title??>"title":"generate_word(15)",</#if>
-      "completed":false
-   },
-   "id":201
+  "0": {
+    "userId": 1,
+    "id": "generate_number(1)",
+    <
+    #
+    if
+    title
+    ?
+    ?
+    >
+    "title": "generate_word(15)",
+    </
+    #
+    if>
+    "completed": false
+  },
+  "id": 201
 }

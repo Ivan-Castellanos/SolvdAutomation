@@ -4,9 +4,12 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class AmazonCartPage extends AmazonGeneralPage{
+public class AmazonCartPage extends AmazonAbstractPage {
     @FindBy(xpath = "//span[contains(text(),'Sign in to your account')]")
     private ExtendedWebElement signInButton;
+
+    @FindBy(xpath = "//*[text() = '\nYour Amazon Cart is empty\n']")
+    private ExtendedWebElement emptyCartText;
 
     public AmazonCartPage(WebDriver driver) {
         super(driver);
@@ -19,5 +22,9 @@ public class AmazonCartPage extends AmazonGeneralPage{
 
     public boolean isCartPageTitleCorrect() {
         return getTitle().equalsIgnoreCase("Amazon.com Shopping Cart");
+    }
+
+    public boolean isCartEmpty() {
+        return emptyCartText.isElementPresent();
     }
 }
