@@ -8,10 +8,9 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class AmazonWebTest implements IAbstractTest {
-    SoftAssert softAssert = new SoftAssert();
-
     @Test
     public void testFooterLinks() {
+        SoftAssert softAssert = new SoftAssert();
         //This test was made in order to check the functionality of the footer bar. Firsts it opens the main amazon page
         //Preconditions: no preconditions.
         AmazonHomePage homePage = new AmazonHomePage(getDriver());
@@ -62,5 +61,30 @@ public class AmazonWebTest implements IAbstractTest {
         Assert.assertTrue(todayDealsPage.isPageTitleCorrect());
         Assert.assertEquals(todayDealsPage.countProducts(), R.TESTDATA.getInt("expected_items"),
                 "the number of element displayed is different from the expected.");
+    }
+
+    @Test
+    public void testSearchResults() {
+        //this test search for a word with the searchbar, verifies is the first given option is correct.
+        //preconditions: no empty searchbar, search word added in _testdata.properties.
+        AmazonHomePage homePage = new AmazonHomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened.");
+
+        AmazonResultPage amazonResultPage = homePage.searchStoredWord();
+        Assert.assertTrue(amazonResultPage.isSearchedWordPresent()); //if the searched word is not in the fir result this test will fail.
+    }
+
+    @Test
+    public void testCustomerServiceHelp() {
+        //this test search for a video in the Customer Service Page, go through navigating, and see if the button to start an important video is there.
+        //preconditions: no preconditions.
+        AmazonHomePage homePage = new AmazonHomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened.");
+
+        AmazonCustomerServicePage amznCustomerPage = homePage.goToCustomerService();
+        amznCustomerPage.clickMissingPacketButton();
+        Assert.assertTrue(amznCustomerPage.isTheVideoVisible());
     }
 }

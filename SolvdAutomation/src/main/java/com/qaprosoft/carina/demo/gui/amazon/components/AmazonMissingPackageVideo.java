@@ -6,15 +6,12 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class AmazonProduct extends AbstractUIObject {
-    @FindBy(id = ".a-image-container img")
-    private ExtendedWebElement productImage;
+public class AmazonMissingPackageVideo extends AbstractUIObject {
 
-    public AmazonProduct(WebDriver driver) {
-        super(driver);
-    }
+    @FindBy(css = ".playBox")
+    protected ExtendedWebElement video;
 
-    public AmazonProduct(WebDriver driver, SearchContext searchContext) {
+    public AmazonMissingPackageVideo(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 }

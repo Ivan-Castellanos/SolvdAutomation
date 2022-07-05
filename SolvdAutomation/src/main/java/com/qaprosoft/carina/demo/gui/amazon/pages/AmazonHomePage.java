@@ -1,14 +1,12 @@
 package com.qaprosoft.carina.demo.gui.amazon.pages;
 
-import com.qaprosoft.carina.core.foundation.utils.Configuration;
-import com.qaprosoft.carina.core.foundation.utils.R;
 import org.openqa.selenium.WebDriver;
 
 public class AmazonHomePage extends AmazonAbstractPage {
 
     public AmazonHomePage(WebDriver driver) {
         super(driver);
-        setPageAbsoluteURL(R.CONFIG.get(Configuration.Parameter.URL.getKey()));
+        setPageURL("");
     }
 
     public AmazonConditionOfUsePage goToConditionOfUsePage() {
@@ -29,5 +27,13 @@ public class AmazonHomePage extends AmazonAbstractPage {
 
     public AmazonTodayDealsPage goToTodayDeals() {
         return navBar.clickTodayDealsButton();
+    }
+
+    public AmazonCustomerServicePage goToCustomerService() {
+        return navBar.clickAmazonCustomerServicePage();
+    }
+
+    public AmazonResultPage searchStoredWord() {
+        return navBar.search();
     }
 }

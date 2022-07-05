@@ -66,6 +66,6 @@ public class AmazonCreateAccountPage extends AmazonAbstractPage {
         typeName();
         typeEmail();
         typePasswordIncorrect();
-        return passwordNotMatchingError.isElementNotPresent(1);
+        return passwordNotMatchingError.isElementWithTextPresent("");
     }
 }

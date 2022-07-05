@@ -2,12 +2,11 @@ package com.qaprosoft.carina.demo.gui.amazon.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AmazonSignInPage extends AmazonAbstractPage {
     @FindBy(xpath = "//*[text() = '\nSign-In\n']")
-    public WebElement signInText;
+    public ExtendedWebElement signInText;
     @FindBy(id = "createAccountSubmit")
     private ExtendedWebElement signUpButton;
 
@@ -21,6 +20,6 @@ public class AmazonSignInPage extends AmazonAbstractPage {
     }
 
     public boolean isSignInTitleCorrect() {
-        return signInText.isDisplayed();
+        return signInText.isElementPresent();
     }
 }

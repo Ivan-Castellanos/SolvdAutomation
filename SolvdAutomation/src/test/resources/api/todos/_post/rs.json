@@ -4,8 +4,7 @@
     "id": "generate_number(1)",
     <
     #
-    if
-    title
+    iftitle
     ?
     ?
     >

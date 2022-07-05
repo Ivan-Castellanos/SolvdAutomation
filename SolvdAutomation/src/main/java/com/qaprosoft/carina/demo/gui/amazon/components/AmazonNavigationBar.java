@@ -1,10 +1,13 @@
 package com.qaprosoft.carina.demo.gui.amazon.components;
 
+import com.qaprosoft.carina.core.foundation.utils.R;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonCartPage;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonCustomerServicePage;
+import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonResultPage;
 import com.qaprosoft.carina.demo.gui.amazon.pages.AmazonTodayDealsPage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +26,9 @@ public class AmazonNavigationBar extends AbstractUIObject {
     @FindBy(xpath = ".//a[contains(text(),\"Registry\")]")
     private ExtendedWebElement registryButton;
 
+    @FindBy(id = "twotabsearchtextbox")
+    private ExtendedWebElement searchBar;
+
 
     public AmazonNavigationBar(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
@@ -38,8 +44,14 @@ public class AmazonNavigationBar extends AbstractUIObject {
         return new AmazonTodayDealsPage(driver);
     }
 
-    public AmazonCustomerServicePage AmazonCustomerServicePage() {
+    public AmazonCustomerServicePage clickAmazonCustomerServicePage() {
         customerServiceButton.click();
         return new AmazonCustomerServicePage(driver);
+    }
+
+    public AmazonResultPage search() {
+        searchBar.type(R.TESTDATA.get("search"));
+        searchBar.sendKeys(Keys.ENTER);
+        return new AmazonResultPage(driver);
     }
 }
