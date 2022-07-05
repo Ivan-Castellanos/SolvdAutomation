@@ -28,7 +28,7 @@ public class AmazonCustomerServicePage extends AmazonAbstractPage {
         missingPacketButton.click();
     }
 
-    public boolean isTheVideoVisible(){
+    public boolean isTheVideoVisible() {
         return (missingPackageVideo.isUIObjectPresent(5)); //the video appears sometimes 2 or 3 second after the page is fully charged.
     }
 }
