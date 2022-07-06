@@ -29,7 +29,6 @@ public class AmazonNavigationBar extends AbstractUIObject {
     @FindBy(id = "twotabsearchtextbox")
     private ExtendedWebElement searchBar;
 
-
     public AmazonNavigationBar(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
